@@ -1,16 +1,66 @@
+import { useState } from 'react';
 import styles from './ContactStyles.module.css';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState('');
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      content: `\`\`\`
+      Name: ${formData.name}
+      Email: ${formData.email}
+      Message: ${formData.message}
+      \`\`\``,
+    };
+
+    try {
+      const response = await fetch(
+        'https://discord.com/api/webhooks/1364109048563236905/R0nfxQHweLCW8ohD52cJYeYpx_KI-Kf0oTsgVTmiWcqBlZDcqCotMPl078vfw1bVjZpN',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' }); // Clear form after submission
+      } else {
+        setStatus('Failed to send the message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('An error occurred. Please try again.');
+    }
+  };
+
   return (
     <section
       id="contact"
       className={styles.container}
     >
       <h1 className="sectionTitle">Contact</h1>
-      <form
-        action="https://formspree.io/f/xanowbjz"
-        method="post"
-      >
+      <form onSubmit={handleSubmit}>
         <div className="formGroup">
           <label
             htmlFor="name"
@@ -23,6 +73,8 @@ function Contact() {
             name="name"
             id="name"
             placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
             required
           />
         </div>
@@ -34,10 +86,12 @@ function Contact() {
             Email
           </label>
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
         </div>
@@ -52,6 +106,8 @@ function Contact() {
             name="message"
             id="message"
             placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
             required
           ></textarea>
         </div>
@@ -61,6 +117,8 @@ function Contact() {
           value="Submit"
         />
       </form>
+
+      {status && <p>{status}</p>}
     </section>
   );
 }

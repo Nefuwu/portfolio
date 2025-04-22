@@ -66,10 +66,6 @@ function Skills() {
           src={checkMarkIcon}
           skill="Power BI"
         />
-        <SkillList
-          src={checkMarkIcon}
-          skill="Git"
-        />
       </div>
     </section>
   );

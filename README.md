@@ -6,6 +6,7 @@ This is my personal developer portfolio — a showcase of my projects, skills, a
 
 
 
+
 ## 🧰 Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript  
@@ -40,3 +41,7 @@ npm install
 ```sh
 npm run dev
 ```
+
+## 🎥 Tutorials & Acknowledgements
+
+This portfolio website was created following a YouTube tutorial by [How to Become a Developer](https://www.youtube.com/watch?v=ZpIel9cv4Jk). A big thank you to them for providing such a clear guide on building a portfolio using React + Vite.

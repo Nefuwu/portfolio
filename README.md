@@ -5,6 +5,7 @@ This is my personal developer portfolio — a showcase of my projects, skills, a
 ---
 
 
+
 ## 🧰 Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript  
@@ -14,6 +15,8 @@ This is my personal developer portfolio — a showcase of my projects, skills, a
 - **Hosting:** GitHub Pages / Vercel / Netlify
 
 ---
+
+
 
 ## 🚀 Getting Started
 Make sure that you have node installed. To check, run:

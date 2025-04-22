@@ -4,11 +4,6 @@ This is my personal developer portfolio — a showcase of my projects, skills, a
 
 ---
 
-## 🌐 Live Demo
-
-👉 [https://your-domain.com](https://your-domain.com)
-
----
 
 ## 🧰 Tech Stack
 

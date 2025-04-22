@@ -12,7 +12,7 @@ This is my personal developer portfolio — a showcase of my projects, skills, a
 - **Framework/Tooling:** Vite + React (or vanilla depending on your setup)  
 - **Styling:** CSS 
 - **Version Control:** Git & GitHub  
-- **Hosting:** GitHub Pages / Vercel / Netlify
+- **Hosting:** GitHub Pages/Netlify
 
 ---
 

@@ -15,3 +15,25 @@ This is my personal developer portfolio — a showcase of my projects, skills, a
 
 ---
 
+## 🚀 Getting Started
+Make sure that you have node installed. To check, run:
+```bash
+node -v
+```
+
+Clone the repo and run it locally:
+```bash
+# Clone the repo
+git clone https://github.com/Nefuwu/portfolio.git
+cd portfolio
+```
+
+# Install dependencies
+```sh
+npm install
+```
+
+# Start development server
+```sh
+npm run dev
+```

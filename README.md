@@ -27,7 +27,6 @@ node -v
 
 Clone the repo and run it locally:
 ```bash
-# Clone the repo
 git clone https://github.com/Nefuwu/portfolio.git
 cd portfolio
 ```

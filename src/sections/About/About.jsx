@@ -1,5 +1,6 @@
 import styles from './AboutStyles.module.css';
 import { useTheme } from '../../common/ThemeContext';
+import { Link } from 'react-router-dom';
 
 function About() {
   return (
@@ -20,6 +21,15 @@ function About() {
           principles, I enjoy crafting efficient APIs, automating systems, and
           deploying real-world applications that solve meaningful problems.
         </p>
+        <br></br>
+
+        {/* Blog link styled via CSS module */}
+        <Link
+          to="/blog"
+          className={styles.blogLink}
+        >
+          <p className={styles.blogLink}>→ Check out my blog</p>
+        </Link>
       </div>
     </section>
   );

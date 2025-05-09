@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+}
 
-  span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.container span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .info {
@@ -30,6 +30,22 @@
   line-height: 1.6;
   max-width: 60ch;
   margin: 0 auto;
+}
+
+/* New blog link style */
+.blogLink {
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.blogLink:hover {
+  color: var(--btn-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
 }
 
 @media (width >= 800px) {

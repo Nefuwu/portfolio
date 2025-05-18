@@ -1,21 +1,43 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './BlogStyles.module.css';
-import { Link, useNavigate } from 'react-router-dom';
 import { posts } from '../data/blogData';
 
 function Blog() {
-  const navigate = useNavigate();
+  const [sortOrder, setSortOrder] = useState('newest'); // default: newest first
+
+  const sortedPosts = posts.slice().sort((a, b) => {
+    if (sortOrder === 'newest') {
+      return new Date(b.date) - new Date(a.date);
+    } else {
+      return new Date(a.date) - new Date(b.date);
+    }
+  });
+
   return (
     <div className={styles.container}>
-      {/* ✅ Back button */}
-      <button
-        onClick={() => navigate('/')}
-        className={styles.backButton}
-      >
-        ← Back to Home
-      </button>
       <h1 className={styles.title}>My Blog</h1>
 
-      {posts.map((post) => (
+      {/* Sort dropdown */}
+      <div className={styles.sortContainer}>
+        <label
+          htmlFor="sort"
+          className={styles.sortLabel}
+        >
+          Sort by:
+        </label>
+        <select
+          id="sort"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+          className={styles.sortSelect}
+        >
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+
+      {sortedPosts.map((post) => (
         <div
           key={post.id}
           className={styles.postCard}

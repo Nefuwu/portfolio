@@ -4,6 +4,37 @@
   margin: 0 auto;
 }
 
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sortLabel {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.sortSelect {
+  padding: 6px 12px;
+  border: 1px solid var(--form-text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  font-weight: 500;
+  transition: border-color 0.2s ease;
+}
+
+.sortSelect:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.blogContainer {
+  padding-bottom: 3rem;
+}
+
 .title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -57,11 +88,35 @@
   text-decoration: underline;
 }
 
+.description {
+  margin-top: 15px;
+  font-style: italic;
+  color: var(--form-text-color);
+}
+
+.techStack {
+  margin-top: 10px;
+  font-weight: 500;
+  color: var(--btn-color);
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--accent-color);
+  text-transform: none;
+}
+
 .backButton {
   margin-bottom: 30px;
-  padding: 10px 20px;
-  background-color: var(--btn-color);
-  color: var(--btn-text-color);
+  padding: 10px 0px;
+  background-color: transparent;
+  color: var(--accent-color);
   border: none;
   border-radius: 5px;
   font-weight: 500;
@@ -70,5 +125,6 @@
 }
 
 .backButton:hover {
-  background-color: var(--accent-color);
+  text-decoration: underline;
+  font-size: 100%;
 }

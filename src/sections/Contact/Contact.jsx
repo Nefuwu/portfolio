@@ -31,16 +31,13 @@ function Contact() {
     };
 
     try {
-      const response = await fetch(
-        'https://discord.com/api/webhooks/1364109048563236905/R0nfxQHweLCW8ohD52cJYeYpx_KI-Kf0oTsgVTmiWcqBlZDcqCotMPl078vfw1bVjZpN',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(import.meta.env.VITE_DISCORD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         setStatus('Message sent successfully!');

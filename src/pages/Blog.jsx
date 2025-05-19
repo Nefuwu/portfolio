@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './BlogStyles.module.css';
 import { posts } from '../data/blogData';
 
 function Blog() {
-  const [sortOrder, setSortOrder] = useState('newest'); // default: newest first
+  const [sortOrder, setSortOrder] = useState('newest');
+  const navigate = useNavigate();
 
   const sortedPosts = posts.slice().sort((a, b) => {
     if (sortOrder === 'newest') {
@@ -17,6 +18,15 @@ function Blog() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>My Blog</h1>
+
+      {/* ✅ Back to Portfolio button */}
+      <button
+        type="button"
+        onClick={() => navigate('/')}
+        className={styles.backButton}
+      >
+        ← Back to Portfolio
+      </button>
 
       {/* Sort dropdown */}
       <div className={styles.sortContainer}>
